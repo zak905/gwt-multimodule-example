@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.gwidgets.examples</groupId>
+    <artifactId>gwt-javaee-md</artifactId>
+    <version>0.1</version>
+  </parent>
+  <artifactId>client-module1</artifactId>
+
+  <name>client-module1</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  
+  	<build>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+			</resource>
+		</resources>
+
+		<outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
+
+
+		<plugins>
+			<plugin>
+				<groupId>net.ltgt.gwt.maven</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<version>1.0-rc-6</version>
+				<extensions>true</extensions>
+				<configuration>
+					<classpathScope>compile</classpathScope>
+					<moduleName>com.gwidgets.Module1</moduleName>
+					<moduleShortName>module1</moduleShortName>
+ 				  <warDir>${basedir}/../server/target/server-${project.version}</warDir>
+					<devmodeWorkDir>${basedir}/../server/target/server-${project.version}</devmodeWorkDir>
+					<webappDirectory>${basedir}/../server/target/server-${project.version}</webappDirectory>
+					<launcherDir>${basedir}/../server/target/server-${project.version}</launcherDir> 
+					<devmodeArgs>
+						<arg>-noserver</arg>
+						<arg>-codeServerPort</arg>
+						<arg>4524</arg>
+					</devmodeArgs>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+  
+</project>
