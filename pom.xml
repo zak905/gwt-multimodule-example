@@ -26,7 +26,7 @@
 	</dependencies>
 	<modules>
 		<module>client-module1</module>
-		<module>client-module</module>
+		<module>client-module2</module>
 		<module>server</module>
   </modules>
 </project>
